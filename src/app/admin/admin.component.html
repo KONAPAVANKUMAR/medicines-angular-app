@@ -1,0 +1,17 @@
+
+
+<br><br>
+<div class="container" style="width: 30vw;">
+    <form class="d-flex" (submit)="onSubmit()">
+        <input [(ngModel)]="name" [ngModelOptions]="{standalone:true}" placeholder="name" type="text" class="form-control">
+        <input [(ngModel)]="price" [ngModelOptions]="{standalone:true}" placeholder="price" type="number" class="form-control">
+        <input type="submit" value="add" class="btn btn-primary">
+    </form>
+    <ul class="list-group">
+        <li *ngFor="let medicine of medicines" class="list-group-item d-flex justify-content-between align-items-center">
+            {{medicine.name}}
+            <span>{{medicine.price}} <a (click)="delete(medicine)" class="badge badge-danger badge-sm">delete</a></span>
+        </li>
+        
+    </ul>
+</div>
